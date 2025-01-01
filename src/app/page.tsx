@@ -2,10 +2,10 @@ import React from "react";
 import Link from "next/link";
 import Footer from "./Footer";
 
-const page = () => {
+const Page = () => {
   return (
     <>
-      <div className="bg-purple-900 w-screen h-screen font-serif  text-white flex flex-col items-center justify-center">
+      <div className="bg-purple-900 w-screen h-screen font-serif text-white flex flex-col items-center justify-center">
         <div className="mb-6 text-xl sm:text-xl text-center">
           Assignment-7 :
           <br /> Data Fetching From Client-Side and Server-Side
@@ -32,4 +32,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
