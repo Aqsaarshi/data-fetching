@@ -2,9 +2,24 @@
 
 import { useEffect, useState } from "react";
 import Footer from "../Footer";
+import React from "react";
+import Image from "next/image";
+
+type Product = {
+  id: number;
+  title: string;
+  price: number;
+  description: string;
+  category: string;
+  image: string;
+  rating: {
+    rate: number;
+    count: number;
+  };
+};
 
 const Page = () => {
-  const [data, setData] = useState<any[]>([]);
+  const [data, setData] = useState<Product[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -25,10 +40,12 @@ const Page = () => {
               key={item.id}
               className="p-4 border-2 border-purple-200 rounded-lg shadow-md hover:shadow-lg transition-shadow"
             >
-              <img
+              <Image
                 src={item.image}
                 alt={item.title}
-                className="w-40 h-40 object-contain mb-2"
+                width={160}
+                height={160}
+                className="mb-2"
               />
               <h2 className="text-lg font-semibold">{item.title}</h2>
               <p className="text-sm text-gray-600 mb-2">{item.description}</p>
